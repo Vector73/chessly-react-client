@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "@descope/react-sdk": "^2.14.16",
+    "@descope/web-component": "^3.43.10",
     "@fvilers/disable-react-devtools": "^1.3.0",
     "@reduxjs/toolkit": "^1.9.7",
     "@testing-library/jest-dom": "^5.17.0",

@@ -15,6 +15,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ProtectedRoute from "./components/ProtectedRoute";
 import { disableReactDevTools } from '@fvilers/disable-react-devtools';
 import { AuthProvider } from "@descope/react-sdk";
+import '@descope/web-component';
 
 
 const router = createBrowserRouter([
