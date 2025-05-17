@@ -4,7 +4,7 @@ import onlineUsersReducer from '../features/onlineUsersSlice'
 import gameReducer from '../features/gameSlice'
 import storage from 'redux-persist/lib/storage';
 import { persistReducer, persistStore } from 'redux-persist';
-import thunk from 'redux-thunk';
+import {thunk} from 'redux-thunk';
 import challengeReducer from '../features/challengeSlice';
 import messagesReducer from '../features/messagesSlice';
 
