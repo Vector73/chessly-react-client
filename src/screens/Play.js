@@ -211,7 +211,7 @@ export default function Play() {
                     </div>
                   }
 
-                  {(playing && game.opponent) && (
+                  {game.opponent && (
                     <div className="d-flex justify-content-between mt-3 flex-wrap">
                       <Button
                         variant="outline-danger"
@@ -277,7 +277,7 @@ export default function Play() {
 
           {/* Chat Component */}
           <Card bg="dark" text="white" className="shadow-lg pb-3 p-0 border-0 flex-grow-1">
-            <Chat playing={playing && game.opponent} />
+            <Chat playing={game.opponent} />
           </Card>
         </Col>
       </Row>
