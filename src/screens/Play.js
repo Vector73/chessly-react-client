@@ -64,7 +64,7 @@ export default function Play() {
   }, [game]);
 
   function play() {
-    if (!game.opponent) {
+    if (!game.opponent && opponent && time) {
       socket.emit("challenge", { challenger: user.username, player: opponent, time: time, handshake: 0 });
     }
   }
@@ -96,7 +96,8 @@ export default function Play() {
   }
 
   const fetchGame = async () => {
-    const response = await fetch("/game/games", {
+    const apiUrl = process.env.REACT_APP_API_URL;
+    const response = await fetch(`${apiUrl}/game/games`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -203,7 +204,7 @@ export default function Play() {
                         variant="success"
                         className="fw-bold"
                         onClick={play}
-                        disabled={(playing && game.opponent)}
+                        disabled={((playing && game.opponent) || time === 0)}
                       >
                         <FaChessKnight className="me-2" />
                         {(playing && game.opponent) ? "Game in Progress" : "Start Game"}

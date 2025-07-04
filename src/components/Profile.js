@@ -45,7 +45,7 @@ export default function Profile({ show, handleClose }) {
 
       const data = await response.json();
 
-      if (data.success) {
+      if (data.success && data.profile) {
         console.log(data)
         setUsername(data.profile.username);
         setEmail(data.profile.email);
@@ -97,7 +97,7 @@ export default function Profile({ show, handleClose }) {
     }
 
     setValidationErrors(errors);
-    return !Object.values(errors).some(error => error);
+    return !Object.values(errors ?? {}).some(error => error);
   };
 
   const handleSave = async () => {
